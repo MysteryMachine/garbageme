@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<head>
+    <title> The Garbage Is Me! </title>
+    <style>
+     #container{
+         display: flex;
+         align-items: center;
+         justify-content: center;
+     }
+
+     #container > img{
+         max-width: 60%;
+         max-height: 200px;
+     }
+
+     body{
+         margin: 0;
+         padding: 0;
+         background-color: black;
+     }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <img src="img/me.png">
+    </div>
+    <script>
+     var set = false;
+     function resize(){
+         var pic = document.getElementById("container");
+         if(!set){ window.onresize = resize; }
+         var height = window.innerHeight;
+         pic.style.height = height + "px";
+     }
+     resize();
+    </script>
+</body>
